@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  src: url('./assets/typography/Inter-Bold.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  src: url('./assets/typography/Inter-Medium.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  src: url('./assets/typography/Inter-Regular.ttf') format('ttf');
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+  --background: #1f1f1f;
+  --surface: #242424;
+  --primary: #716fb2;
+
+  --box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  background-color: #212121;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: 3px solid #212121;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #212121;
+  border-radius: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+main {
+  max-width: 100dvw;
+  min-height: 100dvh;
+  padding: 5dvw 5dvw 0;
+
+  background-color: var(--background);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+h1 {
+  font-size: 54px;
+  font-weight: 700;
+}
+
+button {
+  display: flex;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* common classes */
+.btn {
+  border: none;
+  border-radius: 32px;
+  background-color: var(--primary);
+  color: #01001e;
+  box-shadow: var(--box-shadow);
+
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+}
