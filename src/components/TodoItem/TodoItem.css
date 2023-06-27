@@ -1,10 +1,16 @@
 .todo__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 24px;
 }
 
 .todo__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 40px;
 }
@@ -31,10 +37,14 @@
   height: 180%;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: #ffffff09;
   border-radius: 50%;
   opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
 }
 
@@ -51,15 +61,23 @@
   height: 100%;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
   transition: all 0.35s;
+  -webkit-box-shadow: 0 0 0 20px white;
   box-shadow: 0 0 0 20px white;
 }
 
 .check__icon:active::before {
+  -webkit-box-shadow: 0 0 0 0 white;
   box-shadow: 0 0 0 0 white;
   border-radius: 50%;
   opacity: 1;
+  -webkit-transition: 0s;
+  -o-transition: 0s;
   transition: 0s;
 }

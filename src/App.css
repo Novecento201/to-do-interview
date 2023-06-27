@@ -1,5 +1,6 @@
 .todolist__container {
   background-color: var(--surface);
+  -webkit-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
 
   width: 100%;
@@ -10,8 +11,14 @@
 }
 
 .add__todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 24px;
   padding: 16px 32px;
