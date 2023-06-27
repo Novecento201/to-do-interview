@@ -17,6 +17,18 @@ function App() {
     setIsModalOpen(!isModalOpen);
   };
 
+  // Organizza orientamento dei todo , con quelli completi in  fondo alla lista.
+  // In caso di aggiunta di un todo, esso finisce come ultimo della lista dei non completi.
+  const organizeTodoList = (updatedTodos) => {
+    const completedTodos = updatedTodos.filter((todo) => todo.completed);
+    const notCompletedTodos = updatedTodos.filter((todo) => !todo.completed);
+    const updatedTodosSorted = [...notCompletedTodos, ...completedTodos];
+
+    setTodos(updatedTodosSorted);
+
+    localStorage.setItem('todos', JSON.stringify(updatedTodosSorted));
+  };
+
   const addTodo = (text) => {
     const newTodo = {
       id: Date.now(),
@@ -25,10 +37,9 @@ function App() {
     };
 
     const updatedTodos = [...todos, newTodo];
-    setTodos(updatedTodos);
-    toggleModal();
 
-    localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    organizeTodoList(updatedTodos);
+    toggleModal();
   };
 
   const deleteTodo = (id) => {
@@ -48,14 +59,7 @@ function App() {
       }
     });
 
-    // Sposta i todo completati insieme agli altri
-    const completedTodos = updatedTodos.filter((todo) => todo.completed);
-    const notCompletedTodos = updatedTodos.filter((todo) => !todo.completed);
-    const updatedTodosSorted = [...notCompletedTodos, ...completedTodos];
-
-    setTodos(updatedTodosSorted);
-
-    localStorage.setItem('todos', JSON.stringify(updatedTodosSorted));
+    organizeTodoList(updatedTodos);
   };
 
   // Al primo caricamento di pagina controlla se ci sono "todos" salvati e in caso positivo li prende
