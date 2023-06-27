@@ -1,3 +1,4 @@
+// icons
 import TrashIcon from '../../assets/icons/Bin.svg';
 import CheckFalseIcon from '../../assets/icons/Checkbox_Off.svg';
 import CheckTrueIcon from '../../assets/icons/Checkbox_On.svg';
@@ -31,7 +32,7 @@ const TodoItem = ({ todo, onDelete, onToggle }) => {
         >
           <img
             src={todo.completed ? CheckTrueIcon : CheckFalseIcon}
-            alt="Icona che definisce se il todo è completato o no"
+            alt="Icon for defining if a todo is completed or not"
           />
         </button>
       </div>

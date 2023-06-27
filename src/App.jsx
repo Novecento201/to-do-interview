@@ -50,8 +50,8 @@ function App() {
 
     // Sposta i todo completati insieme agli altri
     const completedTodos = updatedTodos.filter((todo) => todo.completed);
-    const remainingTodos = updatedTodos.filter((todo) => !todo.completed);
-    const updatedTodosSorted = [...remainingTodos, ...completedTodos];
+    const notCompletedTodos = updatedTodos.filter((todo) => !todo.completed);
+    const updatedTodosSorted = [...notCompletedTodos, ...completedTodos];
 
     setTodos(updatedTodosSorted);
 

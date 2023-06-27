@@ -6,9 +6,9 @@ const Modal = ({ addTodo, toggleModal }) => {
   const [text, setText] = useState('');
   const textareaRef = useRef(null);
 
-  function handleClickModal() {
+  const handleClickModal = () => {
     toggleModal();
-  }
+  };
 
   const handleTextChange = (event) => {
     setText(event.target.value);
