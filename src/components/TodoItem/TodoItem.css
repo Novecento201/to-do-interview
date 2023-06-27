@@ -8,6 +8,10 @@
   gap: 24px;
 }
 
+.todo__item:last-child {
+  padding-bottom: 1em;
+}
+
 .todo__icons {
   display: -webkit-box;
   display: -ms-flexbox;
